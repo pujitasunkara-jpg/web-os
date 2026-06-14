@@ -1,97 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Draw a Planet</title>
+# Draw Your Planet 🪐
 
-<style>
-body {
-  margin: 0;
-  background: radial-gradient(circle at center, #0b0b1a, black);
-  color: white;
-  text-align: center;
-  font-family: Arial;
-}
+A small space-themed drawing game where users can create their own planet on a canvas. Players can draw freely, clear their artwork, and use a glow effect to make their planets stand out.
 
-h1 {
-  margin-top: 15px;
-  color: #7fd1ff;
-  text-shadow: 0 0 10px #7fd1ff;
-}
+## Features
+- Free drawing canvas
+- Glow effect
+- Clear canvas button
+- Simple and interactive design
 
-canvas {
-  background: rgba(255,255,255,0.05);
-  border: 2px solid #7fd1ff;
-  border-radius: 10px;
-  margin-top: 15px;
-}
+## Built With
+- HTML
+- CSS
+- JavaScript
+- Python
 
-button {
-  margin: 10px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  background: #7fd1ff;
-  font-weight: bold;
-  cursor: pointer;
-}
+## Challenges
+One challenge was making the drawing feel smooth and responsive. Another was creating a glow effect that looked good while keeping the project simple.
 
-button:hover {
-  transform: scale(1.05);
-}
+## What I Learned
+I learned more about handling user input, working with a canvas, and building interactive web projects.
 
-p {
-  opacity: 0.8;
-}
-</style>
-</head>
+## Future Improvements
+- More brush colors
+- Different brush sizes
+- Save drawings as images
+- More space-themed effects
 
-<body>
-
-<h1>🪐 Draw Your Planet</h1>
-<p>Click and drag to draw your planet shape</p>
-
-<button onclick="clearCanvas()">Clear</button>
-<button onclick="toggleGlow()">Glow ✨</button>
-
-<canvas id="c" width="500" height="500"></canvas>
-
-<script>
-const canvas = document.getElementById("c");
-const ctx = canvas.getContext("2d");
-
-let drawing = false;
-let glow = false;
-
-// mouse controls
-canvas.addEventListener("mousedown", () => drawing = true);
-canvas.addEventListener("mouseup", () => {
-  drawing = false;
-  ctx.beginPath();
-});
-canvas.addEventListener("mousemove", draw);
-
-function draw(e) {
-  if (!drawing) return;
-
-  ctx.lineWidth = 4;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = glow ? "#ffcc66" : "#7fd1ff";
-
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
-}
-
-function clearCanvas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-function toggleGlow() {
-  glow = !glow;
-}
-</script>
-
-</body>
-</html>
+## Author
+Pujita Sunkara
