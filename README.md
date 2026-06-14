@@ -10,8 +10,6 @@ A small space-themed drawing game where users can create their own planet on a c
 
 ## Built With
 - HTML
-- CSS
-- JavaScript
 - Python
 
 ## Challenges
